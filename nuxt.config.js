@@ -40,5 +40,10 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
-  }
+  },
+  serverMiddleware: [
+    // /api 的地址请求，只有数据，没有页面
+    // 所有的 /api 的请求都会转发到 api/app.js 脚本文件中
+    { path: "/api", handler: "~/api/app.js" }
+  ]
 }
