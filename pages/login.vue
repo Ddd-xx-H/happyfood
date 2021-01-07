@@ -54,7 +54,7 @@ export default {
           { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur'}
         ]
       }
-    };
+    }
   },
   methods: {
     //点击重置按钮，重置登录表单
@@ -63,7 +63,8 @@ export default {
     },
     login() {
       this.$refs.loginFormRef.validate(valid => {
-        console.log(valid);
+         console.log(valid);
+        this.$router.push('/home');
       });
     }
   }
