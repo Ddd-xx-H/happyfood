@@ -24,7 +24,7 @@
         </el-form-item>
         <!-- 按钮区域 -->
         <el-form-item class="btns">
-          <el-button type="primary" @click="login">登录</el-button>
+          <el-button type="primary" @click="login">G O</el-button>
           <el-button type="info" @click="resetloginForm">重置</el-button>
         </el-form-item>
       </el-form>
