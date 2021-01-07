@@ -44,7 +44,7 @@
           <span>统计管理</span>
         </template>
        <!-- 二级菜单 -->
-          <el-menu-item index="1-4-1">
+          <el-menu-item index="/count">
                <template slot="title">
             <!-- 图标 -->
           <i class="el-icon-location"></i>
@@ -58,7 +58,7 @@
           <i class="el-icon-fork-spoon"></i>
           <span>菜谱管理</span>
         </template>
-          <el-menu-item index="1-4-1">
+          <el-menu-item index="/menu">
                <template slot="title">
           <i class="el-icon-location"></i>
           <span>导航一</span>
@@ -71,7 +71,7 @@
           <i class="el-icon-food"></i>
           <span>收藏管理</span>
         </template>
-          <el-menu-item index="1-4-1">
+          <el-menu-item index="/collect">
                <template slot="title">
           <i class="el-icon-location"></i>
           <span>导航一</span>
@@ -81,8 +81,11 @@
     </el-menu>
     </el-aside>
     <el-container>
+        
         <!-- 右边内容主体 -->
-      <el-main>main</el-main>
+      <el-main>
+          <Nuxt />
+      </el-main>
       <el-footer>Footer</el-footer>
     </el-container>
   </el-container>
