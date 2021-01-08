@@ -5,8 +5,7 @@ import Session from "koa-session";
 import Router from "koa-router";
 import ORM from "koa-orm";
 import usersRouter from "./router/users.js";
-import perplesRouter from "./router/perples.js";
-
+import umanagesRouter from "./router/umanages.js";
 
 const app = new KOA(); // 实例化 koa 框架
 app.keys = ['koa-key']; // 设置 koa cookie key
@@ -51,6 +50,6 @@ app.use(bodyParser);
 const router = new Router();    
 // router.use("/", rootRouter.routes(), rootRouter.allowedMethods());
 router.use("/users", usersRouter.routes(), usersRouter.allowedMethods());
-router.use("/perples", perplesRouter.routes(), perplesRouter.allowedMethods());
+router.use("/umanages", umanagesRouter.routes(), umanagesRouter.allowedMethods());
 app.use(router.routes(), router.allowedMethods());
 export default app.callback();

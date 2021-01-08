@@ -12,8 +12,8 @@ router.get("/", async (ctx, next) => {
     if(!currentPage){
         currentPage = 1
     }
-    const { Perple } = ctx.orm("user");
-    let count = await Perple.count();
+    const { Umanage } = ctx.orm("user");
+    let count = await Umanage.count();
     if (count === 0) {
         // 获取数据失败
         ctx.status = 500;
@@ -25,7 +25,7 @@ router.get("/", async (ctx, next) => {
         return;
     }
     
-    let list = await Perple.findAll({
+    let list = await Umanage.findAll({
         limit: parseInt(limit), offset: parseInt(limit) * (currentPage - 1)
     });
 

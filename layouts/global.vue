@@ -25,14 +25,14 @@
         <template slot="title">
             <!-- 图标 -->
           <i class="el-icon-refrigerator"></i>
-          <span>客户管理</span>
+          <span>用户管理</span>
         </template>
        <!-- 二级菜单 -->
           <el-menu-item index="/user">
                <template slot="title">
             <!-- 图标 -->
           <i class="el-icon-location"></i>
-          <span>菜谱管理</span>
+          <span>用户列表</span>
         </template>
           </el-menu-item>
         </el-submenu>
