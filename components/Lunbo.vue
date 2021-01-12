@@ -21,7 +21,7 @@
 
    .el-carousel__item:nth-child(2n+1) {
       
-   background-image: url(../assets/food-2.jpg);
+   background-image: url(../assets/food-7.jpg);
    
   }
     .el-carousel__item:nth-child(6) {
@@ -31,11 +31,11 @@
   }
      .el-carousel__item:nth-child(5) {
        
-   background-image: url(../assets/food-4.jpg);
+   background-image: url(../assets/food-13.jpg);
   }
      .el-carousel__item:nth-child(4) {
      
-   background-image: url(../assets/food-5.jpg);
+   background-image: url(../assets/food-8.jpg);
   }
       .el-carousel__item:nth-child(3) {
      
