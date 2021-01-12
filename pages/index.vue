@@ -67,6 +67,7 @@
               <p class="p1">美味圣诞早餐</p>
               <p class="p2">什锦咖喱烩,营养美翻天</p>
             </div>
+            <div class="green">补充能量</div>
             </div></el-col>
           <el-col :span="6"><div class="pictgrid-content pict-purple-light">
             <img src="../assets/food-10.jpg" style="width:325px;height:320px">
@@ -74,6 +75,7 @@
               <p class="p1">无花果美味早餐</p>
               <p class="p2">无花果面包片,营养棒棒棒</p>
             </div>
+              <div class="green">营养均衡</div>
             </div></el-col>
           <el-col :span="6"><div class="pictgrid-content pict-purple"> 
             <div><img src="../assets/food-11.jpg" style="width:325px;height:320px"></div>
@@ -81,6 +83,7 @@
               <p class="p1">美味暖冬早餐</p>
               <p class="p2">鸡蛋桂花米酿,味道美翻天</p>
             </div>
+              <div class="green">美味营养</div>
             </div></el-col>
           <el-col :span="6"><div class="pictgrid-content pict-purple-light">
             <div><img src="../assets/food-12.jpg" style="width:325px;height:320px"></div>
@@ -88,6 +91,7 @@
               <p class="p1">五谷营养早餐</p>
               <p class="p2">核桃芝麻糊,营养双管齐下</p>
             </div>
+              <div class="green">维生素</div>
             </div></el-col>
         </el-row>
          </div>
@@ -223,6 +227,7 @@ h2{
     position: absolute;
     bottom: 0;
     left: 0;
+    
   }
   .p1{
     font-family: 'Times New Roman', Times, serif;
@@ -237,5 +242,16 @@ h2{
     font-family: 'Times New Roman', Times, serif;
     margin-left: 12px;
     color: #f4505b;
+  }
+  .green{
+    width: 100px;
+    height: 40px;
+    background-color: chartreuse;
+    position: absolute;
+    bottom: 42px;
+    right: 10px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 40px;
   }
 </style>
