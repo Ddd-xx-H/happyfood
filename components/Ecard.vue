@@ -1,5 +1,5 @@
 <template>
-  <el-carousel height="300px" direction="vertical" :autoplay="true" :interval="600">
+  <el-carousel height="300px" direction="vertical" :autoplay="true" :interval="800">
     <el-carousel-item v-for="item in 3" :key="item">
     </el-carousel-item>
   </el-carousel>
