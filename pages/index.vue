@@ -27,8 +27,6 @@
         <el-link href="/login" class="login"><img style="width: 22px; height: 33px; margin-bottom:-4px;margin-right:10px" src="../images/login.png" />登录</el-link>
         </div>
       </div>
- 
-      
     </div>
     <div class="lunbo">
       <Lunbo />
@@ -97,12 +95,68 @@
          </div>
     </div>
     </div>
+   <!-- 轮播卡片 -->
+   <div class="menu">
+     <div class="dmenu">
+        <h2 class="h2Title">十二月，冬月需养心<el-link href="/fmenu" :underline="false" class="dmore">更多选择>></el-link></h2>
+            <!-- 卡片 -->
+            <div class="acard">
+         <div class="dcard">
+             <Dcard />
+         </div>
+        <div class="ecard">
+             <Ecard />
+        </div>
+            </div>
+   </div>
 
+  
+    </div>
+  <!-- tab -->
+  <div class="tab">
+     <div class="dtab">
+       <div class="">
+        <el-tabs v-model="activeName" @tab-click="handleClick">
+    <el-tab-pane label="时令食材" name="first"><el-link href="/" :underline="false"><img style="width: 200px; height:200px" src="../images/zishu.jpg" /><img style="width: 200px; height:200px" src="../images/jichi.jpg" />
+          </el-link></el-tab-pane>
+    <el-tab-pane label="配置管理" name="second"><el-link href="/" :underline="false"><img style="width: 200px; height:200px" src="../images/shanyao.jpg" />
+          </el-link></el-tab-pane>
+    <el-tab-pane label="角色管理" name="third"><el-link href="/" :underline="false"><img style="width: 200px; height:200px" src="../images/daiyu.jpg" />
+          </el-link></el-tab-pane>
+    <el-tab-pane label="定时任务补偿" name="fourth"><el-link href="/" :underline="false"><img style="width: 200px; height:200px" src="../images/baicai.jpg" />
+          </el-link></el-tab-pane>
+    <el-tab-pane label="定时任务补偿" name="five"><el-link href="/" :underline="false"><img style="width: 200px; height:200px" src="../images/zhuliji.jpg" />
+          </el-link></el-tab-pane>
+    <el-tab-pane label="定时任务补偿" name="six"><el-link href="/" :underline="false"><img style="width: 200px; height:200px" src="../images/banli.jpg" />
+          </el-link></el-tab-pane>
+    <el-tab-pane label="定时任务补偿" name="seven"><el-link href="/" :underline="false"><img style="width: 200px; height:200px" src="../images/paigu.jpg" />
+          </el-link></el-tab-pane>
+    <el-tab-pane label="定时任务补偿" name="eigth"><el-link href="/" :underline="false"><img style="width: 200px; height:200px" src="../images/niurou.jpg" />
+          </el-link></el-tab-pane>
+        </el-tabs>
+        </div>
+     </div>
+  </div>
+   <!-- footer -->
+      <div class="footer">
+           <div class="dfooter"></div>
+      </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+     data() {
+      return {
+        activeName: 'first'
+      };
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      }
+    }
+};
 </script>
 
 <style lang="less" scoped>
@@ -145,7 +199,7 @@ export default {};
 .middle {
   width: 1200px;
   height: 400px;
-  background-color: turquoise;
+  // background-color: turquoise;
   margin: 0 auto;
   
 }
@@ -195,14 +249,14 @@ export default {};
   .suggest {
   width: 1300px;
   height: 400px;
-  background-color: rgb(250, 197, 50);
+  // background-color: rgb(250, 197, 50);
   margin: 0 auto;
   margin-top: 35px;
 }
-h2{
+.tsuggest h2{
   color: #f4505b;
   text-align: center;
-  background-color: paleturquoise;
+  // background-color: paleturquoise;
 }
 .pict-purple {
     background: #d3dce6;
@@ -246,7 +300,7 @@ h2{
   .green{
     width: 100px;
     height: 40px;
-    background-color: chartreuse;
+    background-color: #679603;
     position: absolute;
     bottom: 42px;
     right: 10px;
@@ -254,4 +308,76 @@ h2{
     text-align: center;
     line-height: 40px;
   }
+  .menu{
+    width: 100%;
+    min-width: 1200px;
+  }
+  .dmenu {
+  width: 1300px;
+  height: 400px;
+  // background-color: rgb(234, 171, 247);
+  margin: 0 auto;
+  margin-top: 45px;
+}
+.menu .h2Title{
+  color: #f4505b;
+  text-align: center;
+  // background-color: rgb(175, 176, 238);
+  position: relative;
+}
+.menu .dmore{
+  position: absolute;
+  right: 0;
+  line-height: 32px;
+  color: rgb(227, 159, 248);
+  font-size: 15px;
+}
+// 卡片
+.dcard{
+  width: 650px;
+  height: 165px;
+  margin-top: 20px;
+}
+.ecard{
+  width: 620px;
+  height: 300px;
+  margin-top: 50px;
+  margin-left: 30px;
+ 
+}
+.acard{
+  display: flex;
+}
+// tab
+.tab{
+  width: 100%;
+  min-width: 1300px;
+}
+.dtab{
+  width: 1200px;
+  height: 380px;
+  margin: 0 auto;
+  margin-top: 45px;
+  background-color: rgb(227, 159, 248);
+
+}
+
+
+
+
+
+
+
+// footer
+.footer{
+  width: 100%;
+}
+.dfooter{
+  width: 1300px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 45px;
+  background-color: #f4505b;
+}
+
 </style>

@@ -6,7 +6,7 @@
   </el-carousel>
 </template>
 
-<style>
+<style lang="less" scoped>
  .el-carousel__item{
   background-size: cover;
   
