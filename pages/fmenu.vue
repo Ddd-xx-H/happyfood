@@ -174,15 +174,24 @@
                     
                   />
                 </div>
+                <!-- 文字框 -->
+                <div class="font">
+                  <p>这世界如果有更多的人热爱美食与诗歌胜过爱黄金，这世界会是一个更美好的地方。</p>
+                  <span>——托尔金 J.R.R.Tolkien</span>
+                </div>
                 </div
             ></el-col>
             <el-col :span="4"
               ><div class="grid-content bg-purple-light">
                  <div>
                   <img
-                    src="../assets/food-9.jpg"
+                    src="../assets/food-20.jpg"
                    
                   />
+                </div>
+                 <div class="fontwhite">
+                  <p>这世界如果有更多的人热爱美食与诗歌胜过爱黄金，这世界会是一个更美好的地方。</p>
+                  <span>——托尔金 J.R.R.Tolkien</span>
                 </div>
                 </div
             ></el-col>
@@ -194,15 +203,23 @@
                    
                   />
                 </div>
+                 <div class="font">
+                  <p>这世界如果有更多的人热爱美食与诗歌胜过爱黄金，这世界会是一个更美好的地方。</p>
+                  <span>——托尔金 J.R.R.Tolkien</span>
+                </div>
                 </div
             ></el-col>
             <el-col :span="4"
               ><div class="grid-content bg-purple-light">
                  <div>
                   <img
-                    src="../assets/food-9.jpg"
+                    src="../assets/food-20.jpg"
                    
                   />
+                </div>
+                 <div class="fontwhite">
+                  <p>这世界如果有更多的人热爱美食与诗歌胜过爱黄金，这世界会是一个更美好的地方。</p>
+                  <span>——托尔金 J.R.R.Tolkien</span>
                 </div>
                 </div
             ></el-col>
@@ -214,21 +231,35 @@
                    
                   />
                 </div>
+                 <div class="font">
+                  <p>这世界如果有更多的人热爱美食与诗歌胜过爱黄金，这世界会是一个更美好的地方。</p>
+                  <span>——托尔金 J.R.R.Tolkien</span>
+                </div>
                 </div
             ></el-col>
             <el-col :span="4"
               ><div class="grid-content bg-purple-light">
                  <div>
                   <img
-                    src="../assets/food-9.jpg"
+                    src="../assets/food-20.jpg"
                     
                   />
+                </div>
+                 <div class="fontwhite">
+                  <p>这世界如果有更多的人热爱美食与诗歌胜过爱黄金，这世界会是一个更美好的地方。</p>
+                  <span>——托尔金 J.R.R.Tolkien</span>
                 </div>
                 </div
             ></el-col>
           </el-row>
         </div>
       </div>
+    </div>
+    <!--  -->
+    <div class="fmiddle">
+        <div class="fmiddled">
+         <Test />
+        </div>
     </div>
   </div>
 </template>
@@ -296,10 +327,10 @@ export default {};
 }
 .fcarde {
   width: 1300px;
-  height: 500px;
+  height: 460px;
   background-color: springgreen;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 .fcarde h2 {
   color: #f4505b;
@@ -316,10 +347,69 @@ export default {};
   }
   .fcardf{
     margin-top: 40px;
+  
   }
   .fcardf img{
     width: 180px;
     height: 220px;
-    margin: 20px 20px 20px;
+    margin: 20px 18px 20px;
+    transform: all 0.6s;
+  //  -webkit-transition: 1s;
+  //   transition: 1s;
+    
+  }
+  .fcardf img:hover{
+    transform: scale(1.2);
+    //  -webkit-transform: scale(-1,1);
+    //  -moz-transform: scale(-1,1);
+  }
+  .font{
+    width: 180px;
+    height: 100px;
+    // background-color: aqua;
+    margin: 0 0 18px 20px;
+    position: relative;
+  }
+  .font p{
+    font-size: 13px;
+    text-indent: 2em;
+    color: #ffffff;
+  }
+  .font span{
+     color: #ffffff;
+     font-size: 13px;
+     position: absolute;
+     bottom: 0;
+     right: 0;
+  }
+  .fontwhite{
+     width: 180px;
+    height: 100px;
+    // background-color: aqua;
+    margin: 0 0 18px 20px;
+    position: relative;
+  }
+  .fontwhite p{
+    font-size: 13px;
+    text-indent: 2em;
+    color: #504e4e;
+  }
+  .fontwhite span{
+     color: #504e4e;
+     font-size: 13px;
+     position: absolute;
+     bottom: 0;
+     right: 0;
+  }
+  // 
+  .fmiddle{
+    width: 100%;
+  }
+  .fmiddled{
+    width: 1300px;
+    height: 400px;
+    background-color: springgreen;
+    margin: 0 auto;
+    margin-top: 50px;
   }
 </style>
