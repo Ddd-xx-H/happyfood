@@ -1,46 +1,246 @@
 <template>
-    <div>
+  <div>
     <div class="title">
       <div class="nav">
         <div class="vv">
-          <el-link href="/" :underline="false" 
-            >首页</el-link
-          >
+          <el-link href="/" :underline="false">首页</el-link>
           <el-link href="/fmenu" :underline="false" class="first"
             >花样菜谱</el-link
           >
-          <el-link href="https://element.eleme.io" :underline="false"
-            >营养百科</el-link
-          >
+          <el-link href="/nutrition" :underline="false">营养百科</el-link>
           <el-link href="/" :underline="false">
             <img style="width: 40px; height: 40px" src="../images/logo.png" />
           </el-link>
-          <el-link href="https://element.eleme.io" :underline="false"
-            >家庭趣玩</el-link
+          <el-link href="/hgame" :underline="false">家庭趣玩</el-link>
+          <el-link href="/douyin" :underline="false">抖音同款</el-link>
+          <el-link href="/knowledge" :underline="false">小知识</el-link>
+          <el-link href="/login" class="login" :underline="false"
+            ><img
+              style="
+                width: 22px;
+                height: 33px;
+                margin-bottom: -4px;
+                margin-right: 10px;
+              "
+              src="../images/login.png"
+            />登录</el-link
           >
-          <el-link href="https://element.eleme.io" :underline="false"
-            >抖音同款</el-link
-          >
-          <el-link href="https://element.eleme.io" :underline="false"
-            >小知识</el-link
-          >
-        <el-link href="/login" class="login"><img style="width: 22px; height: 33px; margin-bottom:-4px;margin-right:10px" src="../images/login.png" />登录</el-link>
         </div>
       </div>
     </div>
+    <!-- 主页导航 -->
+    <div class="fnav">
+      <div class="fnavb mt20 clear jtl">
+        <a
+          href="https://home.meishichina.com/show-top-type-recipe.html"
+          target="_blank"
+          title="一周最热"
+        >
+          <img
+            class="imgLoad"
+            src="//static.meishichina.com/v6/img/zhen/r01.jpg"
+            style="display: block"
+          />
+          一周最热
+        </a>
+
+        <a
+          href="https://home.meishichina.com/show-top-type-recipe-order-pop.html"
+          target="_blank"
+          title="人气菜肴"
+        >
+          <img
+            class="imgLoad"
+            src="//static.meishichina.com/v6/img/zhen/r02.jpg"
+            style="display: block"
+          />
+          人气菜肴
+        </a>
+
+        <a
+          href="https://home.meishichina.com/recipe/chunji/"
+          target="_blank"
+          title="春季食谱"
+        >
+          <img
+            class="imgLoad"
+            src="//static.meishichina.com/v6/img/zhen/cjsp.png"
+            style="display: block"
+          />
+          春季食谱
+        </a>
+
+        <a
+          href="https://home.meishichina.com/recipe/gaoyanzhi/"
+          target="_blank"
+          title="高颜值"
+        >
+          <img
+            class="imgLoad"
+            src="//static.meishichina.com/v6/img/zhen/r04.jpg"
+            style="display: block"
+          />
+          高颜值
+        </a>
+
+        <a
+          href="https://home.meishichina.com/recipe/kuaishoucai/"
+          target="_blank"
+          title="快手菜"
+        >
+          <img
+            class="imgLoad"
+            src="//static.meishichina.com/v6/img/zhen/r05.jpg"
+            style="display: block"
+          />
+          快手菜
+        </a>
+
+        <a
+          href="https://home.meishichina.com/recipe/zaocan/"
+          target="_blank"
+          title="早餐"
+        >
+          <img
+            class="imgLoad"
+            src="//static.meishichina.com/v6/img/zhen/r06.jpg"
+            style="display: block"
+          />
+          早餐
+        </a>
+
+        <a
+          href="https://home.meishichina.com/recipe-menu.html"
+          target="_blank"
+          title="家常菜谱"
+        >
+          <img
+            class="imgLoad"
+            src="//static.meishichina.com/v6/img/zhen/r07.jpg"
+            style="display: block"
+          />
+          家常菜谱
+        </a>
+        <a
+          href="https://hongbei.meishichina.com/"
+          target="_blank"
+          title="烘焙大全"
+        >
+          <img
+            class="imgLoad"
+            src="//static.meishichina.com/v6/img/zhen/r08.jpg"
+            style="display: block"
+          />
+          烘焙大全
+        </a>
+        <a
+          href="https://mamapai.meishichina.com/"
+          target="_blank"
+          title="亲子专区"
+        >
+          <img
+            class="imgLoad"
+            src="//static.meishichina.com/v6/img/zhen/r09.jpg"
+            style="display: block"
+          />
+          亲子专区
+        </a>
+        <a
+          href="https://home.meishichina.com/recipe-list.html"
+          target="_blank"
+          title="所有菜谱"
+        >
+          <img
+            class="imgLoad"
+            src="//static.meishichina.com/v6/img/zhen/r10.jpg"
+            style="display: block"
+          />
+          所有菜谱
+        </a>
+      </div>
     </div>
+    <!-- 菜谱卡片翻转 -->
+    <div class="fcard">
+      <div class="fcarde">
+        <h2><img src="../images/xiaoji.jpg" />FANCY MENU</h2>
+
+        <div class="fcardf">
+          <el-row>
+            <el-col :span="4"
+              ><div class="grid-content bg-purple"> 
+                <div>
+                  <img
+                    src="../assets/food-9.jpg"
+                    
+                  />
+                </div>
+                </div
+            ></el-col>
+            <el-col :span="4"
+              ><div class="grid-content bg-purple-light">
+                 <div>
+                  <img
+                    src="../assets/food-9.jpg"
+                   
+                  />
+                </div>
+                </div
+            ></el-col>
+            <el-col :span="4"
+              ><div class="grid-content bg-purple">
+                 <div>
+                  <img
+                    src="../assets/food-9.jpg"
+                   
+                  />
+                </div>
+                </div
+            ></el-col>
+            <el-col :span="4"
+              ><div class="grid-content bg-purple-light">
+                 <div>
+                  <img
+                    src="../assets/food-9.jpg"
+                   
+                  />
+                </div>
+                </div
+            ></el-col>
+            <el-col :span="4"
+              ><div class="grid-content bg-purple">
+                 <div>
+                  <img
+                    src="../assets/food-9.jpg"
+                   
+                  />
+                </div>
+                </div
+            ></el-col>
+            <el-col :span="4"
+              ><div class="grid-content bg-purple-light">
+                 <div>
+                  <img
+                    src="../assets/food-9.jpg"
+                    
+                  />
+                </div>
+                </div
+            ></el-col>
+          </el-row>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>
 <style lang="less" scoped>
-    .title {
+.title {
   width: 100%;
   height: 68px;
-  background-color:#f4505b;
-  min-width: 1200px;
+  background-color: #f4505b;
+  min-width: 1300px;
 }
 .nav {
   width: 100%;
@@ -49,7 +249,6 @@ export default {
   // background-color: gold;
   line-height: 68px;
   min-width: 1200px;
-  
 }
 .el-link {
   padding-left: 20px;
@@ -63,12 +262,64 @@ export default {
   // background-color: green;
   margin: 0 auto;
 }
-.first{
-  border-top: 2px solid rgb(255, 217, 147) ;
-  
+.first {
+  border-top: 2px solid rgb(255, 217, 147);
 }
-  .login{
-    margin-left: 56px;
-
+.login {
+  margin-left: 56px;
+}
+// 导航
+.fnav {
+  width: 100%;
+}
+.fnavb {
+  width: 1300px;
+  height: 120px;
+  margin: 0 auto;
+  // background-color: seagreen;
+  display: flex;
+  justify-content: space-between;
+  min-width: 1200px;
+  margin-top: 30px;
+}
+.fnavb a {
+  text-decoration: none;
+  color: rgb(138, 139, 139);
+  text-align: center;
+}
+.fnavb a:hover {
+  color: rgb(74, 236, 223);
+}
+// 菜单卡片
+.fcard {
+  width: 100%;
+}
+.fcarde {
+  width: 1300px;
+  height: 500px;
+  background-color: springgreen;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.fcarde h2 {
+  color: #f4505b;
+  text-align: center;
+}
+.bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #ffffff;
+  }
+  .grid-content {
+    min-height: 380px;
+  }
+  .fcardf{
+    margin-top: 40px;
+  }
+  .fcardf img{
+    width: 180px;
+    height: 220px;
+    margin: 20px 20px 20px;
   }
 </style>
