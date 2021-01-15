@@ -258,7 +258,15 @@
     <!--  -->
     <div class="fmiddle">
         <div class="fmiddled">
-         <Test />
+          <!-- 标题 -->
+          <div class="fyuan">
+          <span class="yuan"><img src="../assets/yuandian.jpg"></span>
+            <h2>最新<span>菜谱</span>一定要学会哦！</h2>
+          </div>
+          <!-- 表格咯 -->
+          <div class="ftable">
+                <Ftable />
+          </div>
         </div>
     </div>
   </div>
@@ -407,9 +415,25 @@ export default {};
   }
   .fmiddled{
     width: 1300px;
-    height: 400px;
+    height: 600px;
     background-color: springgreen;
     margin: 0 auto;
     margin-top: 50px;
   }
+  .fyuan{
+    position: relative;
+  }
+ .fyuan h2{
+   color: #f4505b;
+   border-bottom: 3px solid #18d4c5;
+   margin-left: 20px;
+  
+ }
+.yuan img{
+  position: absolute;
+  margin-top: 3px;
+ }
+ .fyuan h2 span{
+    color:  #18d4c5;
+ }
 </style>

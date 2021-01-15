@@ -345,6 +345,7 @@ export default {
   background-color: #f4505b;
   min-width: 1300px;
   position: relative;
+
 }
 .nav {
   width: 100%;
@@ -353,8 +354,6 @@ export default {
   // background-color: gold;
   line-height: 68px;
   min-width: 1200px;
-  
-  position: fixed;
 }
 .title .el-link {
   padding-left: 20px;

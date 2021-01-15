@@ -28,13 +28,35 @@
         </div>
       </div>
     </div>
-
+       <div class="kcard">
+              <div class="kcardd">
+                    <div class="kyuan">
+          <span class="yuan"><img src="../assets/zise.jpg"></span>
+            <h2>美食<span>小知识</span>哦！</h2>
+                    </div>
+                    <!-- 卡片 -->
+                    <div class="kcarddd">
+                       <Kcard :KnowList="fetchKnowList" />
+                    </div>
+                  
+              </div>
+       </div>
       
     </div>
 </template>
 <script>
 export default {
-    
+    data(){
+    return{
+      fetchKnowList:[],
+      koneledge:[],
+    }
+  },
+  async fetch(){
+    let result = await fetch('/api/knows').then((res ) => res.json());
+    this.fetchKnowList =result.list
+    console.log('this.fetchKnowList:O%',this.fetchKnowList);
+  }
 }
 </script>
 <style lang="less" scoped>
@@ -73,4 +95,30 @@ export default {
     margin-left: 56px;
 
   }
+  .kcard{
+    width: 100%;
+  }
+  .kcardd{
+    width: 1300px;
+    height: 1360px;
+    margin: 0 auto;
+    background-color: cornflowerblue;
+    margin-top: 50px;
+  }
+   .fyuan{
+    position: relative;
+  }
+ .kyuan h2{
+   color: #f4505b;
+   border-bottom: 4px solid #ac56c5;
+   margin-left: 20px;
+  
+ }
+.yuan img{
+  position: absolute;
+  margin-top: 3px;
+ }
+ .kyuan h2 span{
+    color:  #a755c3;
+ }
 </style>
