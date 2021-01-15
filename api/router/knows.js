@@ -29,6 +29,8 @@ router.get("/", async (ctx, next) => {
         limit: parseInt(limit), offset: parseInt(limit) * (currentPage - 1)
     });
 
+    console.log(list);
+
     //设定返回的类型 是文本的 json
     ctx.type = "text/json";
     // 直接将查找的数据，给客户端自己去显示
