@@ -22,8 +22,11 @@
             type="password"
           ></el-input>
         </el-form-item>
+        <!-- 注册一个 -->
+        
         <!-- 按钮区域 -->
         <el-form-item class="btns">
+          <el-link href="/signin">没有账号注册一个?</el-link>
           <el-button type="primary" @click="login">G O</el-button>
           <el-button type="info" @click="resetloginForm">重置</el-button>
         </el-form-item>
@@ -73,12 +76,16 @@ export default {
 
 <style lang="less" scoped>
 .login_container {
-  background-color: #556b2b;
-  height: 100vh;
+ width: 100%;
+ background-image: url(../assets/bg.jpg);
+ background-size: cover;
+ height: 100vh;
+ min-width: 450px;
 }
 .login_box {
   width: 450px;
   height: 300px;
+  min-width: 450px;
   background-color: #fff;
   border-radius: 8px;
   position: absolute;
@@ -113,5 +120,13 @@ export default {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
+}
+// .el-form{
+//   position: relative;
+// }
+.el-link{
+  margin-right: 70px;
+  color: #409EFF;
+
 }
 </style>
