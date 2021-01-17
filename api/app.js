@@ -7,6 +7,7 @@ import ORM from "koa-orm";
 import usersRouter from "./router/users.js";
 import umanagesRouter from "./router/umanages.js";
 import knowsRouter from "./router/knows.js";
+import fmenusRouter from "./router/fmenus.js";
 
 const app = new KOA(); // 实例化 koa 框架
 app.keys = ['koa-key']; // 设置 koa cookie key
@@ -53,6 +54,7 @@ const router = new Router();
 router.use("/users", usersRouter.routes(), usersRouter.allowedMethods());
 router.use("/umanages", umanagesRouter.routes(), umanagesRouter.allowedMethods());
 router.use("/knows", knowsRouter.routes(), knowsRouter.allowedMethods());
+router.use("/fmenus", fmenusRouter.routes(), fmenusRouter.allowedMethods());
 
 app.use(router.routes(), router.allowedMethods());
 export default app.callback();

@@ -265,14 +265,25 @@
           </div>
           <!-- 表格咯 -->
           <div class="ftable">
-                <Ftable />
+                <Ftable :FmenuList="fetchFmenuList" />
           </div>
         </div>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+   data(){
+    return{
+      fetchFmenuList:[]
+    }
+   },
+     async fetch(){
+    let result = await fetch('/api/fmenus').then((res ) => res.json());
+    this.fetchFmenuList =result.list
+    console.log('this.fetchFmenuList:O%',this.fetchFmenuList);
+     }
+};
 </script>
 <style lang="less" scoped>
 .title {

@@ -2,14 +2,17 @@
 <div class="ftable">
   <div class="ftable1">
   <el-row :gutter="20">
-  <el-col :span="4"><div class="grid-content bg-purple"><div><a href="/"><img src="../images/huangji.jpg"></a></div>
-  <div class="ftext"><span><a href="#">日式凉拌豆腐</a></span><br/><span class="ftextb">心清似水淡若云</span></div>
+  <el-col :span="4"  v-for="item in FmenuList" :key="item.Fmenu_id"><div class="grid-content bg-purple"><div><a href="/"><img :src="item.Fmenu_images[0].url"></a></div>
+  <div class="ftext"><span><a href="#">{{ item.Fmenu_name }}</a></span><br/><span class="ftextb">{{ item.Fmenu_desc }}</span></div>
   </div></el-col>
+  <!-- <el-col :span="4"  v-for="item in FmenuList" :key="item.Fmenu_id"><div class="grid-content bg-purple"><div><a href="/"><img :src="item.Fmenu_images[0].url"></a></div>
+  <div class="ftext"><span><a href="#">{{ item.Fmenu_name }}</a></span><br/><span class="ftextb">{{ item.Fmenu_desc }}</span></div>
+  </div></el-col> -->
+  <!-- <el-col :span="4"><div class="grid-content bg-purple"></div></el-col> -->
+  <!-- <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
   <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
   <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col> -->
   </el-row>
   </div>
 
@@ -17,8 +20,19 @@
 </template>
 <script>
 export default {
-    
-
+    props: {
+    FmenuList: {
+      type: Array,
+      default: function () {
+        return [];
+      },
+    },
+    },
+     data() {
+    return {
+     
+    }
+  },
 }
 </script>
 <style lang="less" scoped>

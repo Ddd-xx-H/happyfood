@@ -49,7 +49,7 @@ export default {
     data(){
     return{
       fetchKnowList:[],
-      koneledge:[],
+      // koneledge:[],
     }
   },
   async fetch(){
