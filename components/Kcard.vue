@@ -8,7 +8,7 @@
         :offset="index > 0 ? 1 : 0"
       >
         <el-card :body-style="{ padding: '0px' }">
-          <img :src="item.Know_images | jsonChangeToObject" class="image" />
+          <img :src="item.Know_images[0].url" class="image" />
           <div style="padding: 8px">
             <span>{{ item.Know_desc }}</span>
             <div class="bottom clearfix">
@@ -133,11 +133,6 @@ export default {
       default: function () {
         return [];
       },
-    },
-  },
-  filters: {
-    jsonChangeToObject(value) {
-      return JSON.parse(value)[0].url;
     },
   },
   data() {

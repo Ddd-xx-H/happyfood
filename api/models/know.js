@@ -19,19 +19,17 @@ export default function (sequelize, type) {
         },
         //消息类型
         Know_desc:{
-            type: DataTypes.STRING(45),
-            allowNull: false,
+            type: DataTypes.STRING, 
         },
         Kstate: {
-            type: DataTypes.STRING(233),
-            allowNull: false,
-            
+            type: DataTypes.STRING, 
         },
        
-        //成功推送
+        //照片格式亲
         Know_images:{
-            type: DataTypes.STRING(45),
-            allowNull: false,
+            type: DataTypes.JSON, 
+            allowNull: false, 
+            defaultValue: "[]",
         }
 
     },{
