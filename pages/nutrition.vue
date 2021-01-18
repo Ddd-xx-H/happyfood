@@ -29,7 +29,25 @@
       </div>
     </div>
 
-      
+   <!-- 正文 -->
+     <div class="nmenu">
+         <div class="nbaike">
+              <!-- 主体 -->
+              <div class="nmain">
+                <img src="../assets/paihang.png">
+                 <h3>食物营养百科</h3>
+                 <div class="npaihang">
+                    <img src="../assets/shu.png">
+                   <p>五谷杂粮的营养丰富怎么吃最健康 哪些人群不宜多吃粗粮</p>
+                   <div class="line"></div>
+                 </div>
+              </div>
+              <!-- 右边 -->
+              <div class="nymain"></div>
+              <div class="ntmain"></div>
+         </div>
+
+     </div>      
     </div>
 </template>
 <script>
@@ -42,7 +60,7 @@ export default {
   width: 100%;
   height: 68px;
   background-color:#f4505b;
-  min-width: 1200px;
+  min-width: 1400px;
 }
 .nav {
   width: 100%;
@@ -73,4 +91,55 @@ export default {
     margin-left: 56px;
 
   }
+//  正文
+  .nmenu{
+    width: 100%;
+  }
+  .nbaike{
+    width: 1400px;
+    height: 1000px;
+    background-color: darkorange;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    margin-top: 40px;
+  }
+  .nmain{
+    width: 1000px;
+    height: 900px;
+    background-color: aqua;
+    position: relative;
+  }
+  .nymain{
+    width: 300px;
+    height: 400px;
+    background-color: chartreuse;
+    margin-left: 20px;
+  }
+  .ntmain{
+    width: 300px;
+    height: 500px;
+    background-color: cornflowerblue;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .nmain h3{
+    color: #f4505b;
+    border-bottom: 1px solid #dddddd;
+    margin-top: -27px;
+    margin-left: 25px;
+  }
+.npaihang img{
+  margin-top: 30px;
+}
+.npaihang p{
+  margin-left: 30px;
+  margin-top: -27px;
+  
+}
+.line{
+  border-bottom: 1px dashed #dddddd; 
+  margin-top: 10px;
+}
 </style>

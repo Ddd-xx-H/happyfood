@@ -269,6 +269,12 @@
           </div>
         </div>
     </div>
+     <!-- 返回顶部 -->
+   
+     <a href="javascript:;" onclick="window.scrollTo(0,0);"><img src="../images/top.png"></a>
+   
+    <!-- footer -->
+    <Footer />
   </div>
 </template>
 <script>
@@ -330,7 +336,7 @@ export default {
   display: flex;
   justify-content: space-between;
   min-width: 1200px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 .fnavb a {
   text-decoration: none;
@@ -347,7 +353,7 @@ export default {
 .fcarde {
   width: 1300px;
   height: 460px;
-  background-color: springgreen;
+  // background-color: springgreen;
   margin: 0 auto;
   margin-top: 60px;
 }
@@ -426,8 +432,8 @@ export default {
   }
   .fmiddled{
     width: 1300px;
-    height: 600px;
-    background-color: springgreen;
+    height: 980px;
+    // background-color: springgreen;
     margin: 0 auto;
     margin-top: 50px;
   }
@@ -442,7 +448,7 @@ export default {
  }
 .yuan img{
   position: absolute;
-  margin-top: 3px;
+  margin-top: 2px;
  }
  .fyuan h2 span{
     color:  #18d4c5;

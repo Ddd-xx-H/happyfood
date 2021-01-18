@@ -1,18 +1,10 @@
 <template>
 <div class="ftable">
   <div class="ftable1">
-  <el-row :gutter="20">
+  <el-row :gutter="20" class="row-bg">
   <el-col :span="4"  v-for="item in FmenuList" :key="item.Fmenu_id"><div class="grid-content bg-purple"><div><a href="/"><img :src="item.Fmenu_images[0].url"></a></div>
   <div class="ftext"><span><a href="#">{{ item.Fmenu_name }}</a></span><br/><span class="ftextb">{{ item.Fmenu_desc }}</span></div>
   </div></el-col>
-  <!-- <el-col :span="4"  v-for="item in FmenuList" :key="item.Fmenu_id"><div class="grid-content bg-purple"><div><a href="/"><img :src="item.Fmenu_images[0].url"></a></div>
-  <div class="ftext"><span><a href="#">{{ item.Fmenu_name }}</a></span><br/><span class="ftextb">{{ item.Fmenu_desc }}</span></div>
-  </div></el-col> -->
-  <!-- <el-col :span="4"><div class="grid-content bg-purple"></div></el-col> -->
-  <!-- <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col> -->
   </el-row>
   </div>
 
@@ -41,7 +33,7 @@ export default {
    height: 200px;
 }
 .ftable1{
-    margin-top: 40px;
+  margin-top: -30px;
 }
 .bg-purple {
     background: #d3dce6;
@@ -49,6 +41,8 @@ export default {
 .grid-content {
     width: 200px;
     height: 200px;
+    margin-top: 100px;
+   
   }
   .ftable1 .ftext{
       width: 200px;
@@ -71,4 +65,9 @@ export default {
      margin-top: 5px;
      margin-left: -46px;
   }
+// .row-bg{
+//   display: flex;
+//   align-content: space-between;
+// }
+
 </style>

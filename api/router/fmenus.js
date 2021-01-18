@@ -7,7 +7,7 @@ const router = new Router();
 router.get("/", async (ctx, next) => {
     let { limit, currentPage } = ctx.query;
     if(!limit){
-        limit = 10;
+        limit = 20;
     }
     if(!currentPage){
         currentPage = 1
