@@ -34,13 +34,7 @@
          <div class="nbaike">
               <!-- 主体 -->
               <div class="nmain">
-                <img src="../assets/paihang.png">
-                 <h3>食物营养百科</h3>
-                 <div class="npaihang">
-                    <img src="../assets/shu.png">
-                   <p>五谷杂粮的营养丰富怎么吃最健康 哪些人群不宜多吃粗粮</p>
-                   <div class="line"></div>
-                 </div>
+            <Nmenu :NmenuList="fetchNmenuList" />
               </div>
               <!-- 右边 -->
               <div class="nymain"></div>
@@ -52,8 +46,17 @@
 </template>
 <script>
 export default {
-    
-}
+      data(){
+        return{
+           fetchNmenuList:[]
+        }
+      },
+   async fetch(){
+    let result = await fetch('/api/nmenus').then((res ) => res.json());
+    this.fetchNmenuList =result.list
+    console.log('this.fetchNmenuList:O%',this.fetchNmenuList);
+     }
+};
 </script>
 <style lang="less" scoped>
     .title {
@@ -104,12 +107,7 @@ export default {
     position: relative;
     margin-top: 40px;
   }
-  .nmain{
-    width: 1000px;
-    height: 900px;
-    background-color: aqua;
-    position: relative;
-  }
+ 
   .nymain{
     width: 300px;
     height: 400px;
@@ -124,22 +122,6 @@ export default {
     right: 0;
     bottom: 0;
   }
-  .nmain h3{
-    color: #f4505b;
-    border-bottom: 1px solid #dddddd;
-    margin-top: -27px;
-    margin-left: 25px;
-  }
-.npaihang img{
-  margin-top: 30px;
-}
-.npaihang p{
-  margin-left: 30px;
-  margin-top: -27px;
-  
-}
-.line{
-  border-bottom: 1px dashed #dddddd; 
-  margin-top: 10px;
-}
+ 
+
 </style>
