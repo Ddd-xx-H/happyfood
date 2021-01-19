@@ -6,29 +6,43 @@
         <img src="../assets/avatar.jpg" alt="" />
       </div>
       <!-- 登录表单区域 -->
-      <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="0px" class="login_form">
+      <el-form
+        ref="ruleForm"
+        :model="ruleForm"
+        :rules="rules"
+        label-width="0px"
+        class="login_form"
+      >
         <!-- 用户名 -->
         <el-form-item prop="username">
           <el-input
-            v-model="loginForm.username"
-            prefix-icon="el-icon-s-custom"
+            prefix-icon="el-icon-user-solid"
+            v-model="ruleForm.username"
+            placeholder="请输入登陆账号"
+            show-message="ture"
           ></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
           <el-input
-            v-model="loginForm.password"
             prefix-icon="el-icon-lock"
-            type="password"
+            :type="passwordVisible"
+            v-model="ruleForm.password"
+            placeholder="请输入登陆密码"
+            autocomplete="off"
+            show-message="ture"
+            @keyup.enter.native="login"
           ></el-input>
         </el-form-item>
         <!-- 注册一个 -->
-        
+
         <!-- 按钮区域 -->
         <el-form-item class="btns">
           <el-link href="/signin">没有账号注册一个?</el-link>
-          <el-button type="primary" @click="login">G O</el-button>
-          <el-button type="info" @click="resetloginForm">重置</el-button>
+          <el-button type="primary" @click="submitForm('ruleForm')"
+            >G O</el-button
+          >
+          <!-- <el-button type="info" @click="resetloginForm">重置</el-button> -->
         </el-form-item>
       </el-form>
     </div>
@@ -39,48 +53,62 @@
 export default {
   data() {
     return {
-      //这是登录表单的数据绑定对象
-      loginForm: {
-        username: 'xdh',
-        password: '123456'
+      passwordVisible: "password", // 查看、隐藏密码
+      icon: "el-icon-view",
+      dialogFormVisible: false, // 对话框内容
+
+      ruleForm: {
+        username: "",
+        password: "",
+        type: 0,
       },
-      // 这是表单的验证规则对象
-      loginFormRules: {
-        // 验证用户名是否合法
+      rules: {
         username: [
-          { required: true, message: '请输入登录名称', trigger: 'blur' },
-          { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur'}
+          { required: true, message: "登陆账号不能为空", trigger: "blur" },
+          { min: 4, max: 16, message: "长度在 4-16 个字符", trigger: "blur" },
         ],
-        // 验证密码是否合法
         password: [
-          { required: true, message: '请输入登录密码', trigger: 'blur' },
-          { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur'}
-        ]
-      }
-    }
+          {
+            required: true,
+            message: "登陆密码不能为空",
+            // validator: password,
+            trigger: "blur",
+          },
+        ],
+      },
+      checked: false,
+    };
   },
+
   methods: {
-    //点击重置按钮，重置登录表单
-    resetloginForm() {
-      this.$refs.loginFormRef.resetFields();
+    handleIdentify(value) {
+      this.picVerification = value;
     },
-    login() {
-      this.$refs.loginFormRef.validate(valid => {
-         console.log(valid);
-        this.$router.push('/home');
+    submitForm(ruleForm) {
+      let seft = this;
+      // this.ruleForm.type = this.loginType;
+      this.$refs[ruleForm].validate(async (valid) => {
+        if (valid) {
+          const result = await seft.$axios.post("/api/account", seft.ruleForm);
+
+          alert("登录成功");
+          seft.$router.push({ path: "/home" });
+        } else {
+          alert("请输入正确账号");
+        }
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="less" scoped>
 .login_container {
- width: 100%;
- background-image: url(../assets/bg.jpg);
- background-size: cover;
- height: 100vh;
- min-width: 450px;
+  width: 100%;
+  background-image: url(../assets/bg.jpg);
+  background-size: cover;
+  height: 100vh;
+  min-width: 450px;
 }
 .login_box {
   width: 450px;
@@ -124,9 +152,8 @@ export default {
 // .el-form{
 //   position: relative;
 // }
-.el-link{
+.el-link {
   margin-right: 70px;
-  color: #409EFF;
-
+  color: #409eff;
 }
 </style>
