@@ -45,6 +45,7 @@ export default {
   margin-left: 30px;
   margin-top: -27px;
   width: 560px;
+  font-size: 18px;
   
 }
 .line{
