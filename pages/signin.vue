@@ -105,12 +105,12 @@ export default {
 </script>
 <style lang="less" scoped>
 #building {
-  background: url("../assets/bg_3.jpg");
+  background: url("../assets/bg_66.jpg");
   width: 100%; //大小设置为100%
   height: 100%; //大小设置为100%
   // background-color: #0000003b;
   position: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 .cent {
   width: 100%;
