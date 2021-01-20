@@ -6,10 +6,10 @@ const router = new Router();
 // 所有 /api/store/ 的请求会被分流到这里
 router.get("/", async (ctx, next) => {
     let { limit, currentPage } = ctx.query;
-    if(!limit){
+    if (!limit) {
         limit = 10;
     }
-    if(!currentPage){
+    if (!currentPage) {
         currentPage = 1
     }
     const { Umanage } = ctx.orm("user");
@@ -24,7 +24,7 @@ router.get("/", async (ctx, next) => {
         });
         return;
     }
-    
+
     let list = await Umanage.findAll({
         limit: parseInt(limit), offset: parseInt(limit) * (currentPage - 1)
     });
@@ -48,5 +48,44 @@ router.get("/", async (ctx, next) => {
     // ctx.type = "text/json";
     // 直接将查找的数据，给客户端自己去显示
     // ctx.body = JSON.stringify(list);
+
 });
+
+//switch开关改变状态
+router.get("/changeState", async (ctx, next) => {
+    let { id, ustate } = ctx.query;
+    const { Umanage } = ctx.orm("user");
+    // 通过查询的数据是一个数组
+    let umanage = await Umanage.findAll({
+        where: {
+            id: parseInt(id)
+        }
+    })
+    // 查询到的数据不止一条
+    if (umanage.length !== 1) {
+        ctx.body = JSON.stringify({
+            result: false,
+            message: "更新用户状态失败！"
+        });
+        return;
+    }
+
+    // 从数组提取第一对象
+    umanage = umanage[0];
+
+    umanage.ustate = ustate;
+    umanage.save()
+    console.log(umanage);
+
+    ctx.type = "text/json";
+    ctx.status = 200;
+    ctx.body = JSON.stringify({
+        result: true,
+        code: 200,
+        message: "更新用户状态成功！",
+        umanage
+    });
+});
+
+
 export default router;
