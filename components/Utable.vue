@@ -1,4 +1,5 @@
 <template>
+ <div>
   <el-table :data="umanageList" stripe border>
     <el-table-column type="index"></el-table-column>
     <el-table-column prop="udata" label="日期" width="180"> </el-table-column>
@@ -36,6 +37,8 @@
       </template>
     </el-table-column>
   </el-table>
+
+  </div>
 </template>
 <script>
 export default {
@@ -48,7 +51,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+     
+    };
   },
   created() {},
   methods: {
