@@ -28,7 +28,15 @@
         </div>
       </div>
     </div>
+ <!-- 内容主体部分 -->
+    <div class="douyin">
+       <div class="dy">
+         <div>
+         <Dycard />
+         </div>
+       </div>
 
+    </div>
       
     </div>
 </template>
@@ -42,7 +50,7 @@ export default {
   width: 100%;
   height: 68px;
   background-color:#f4505b;
-  min-width: 1200px;
+  min-width: 1400px;
 }
 .nav {
   width: 100%;
@@ -50,7 +58,7 @@ export default {
   height: 68px;
   // background-color: gold;
   line-height: 68px;
-  min-width: 1200px;
+  min-width: 1300px;
   
 }
 .el-link {
@@ -72,5 +80,18 @@ export default {
   .login{
     margin-left: 56px;
 
+  }
+  // 内容
+  .douyin{
+    width: 100%;
+   
+  }
+  .dy{
+    width: 1400px;
+    height: 700px;
+    background-color: aquamarine;
+    margin: 0 auto;
+    min-width: 1400px;
+    
   }
 </style>

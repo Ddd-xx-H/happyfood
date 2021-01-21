@@ -42,6 +42,8 @@
               </div>
        </div>
       
+       <!-- footer -->
+    <div class="footer"><Footer /></div>
     </div>
 </template>
 <script>
@@ -64,7 +66,7 @@ export default {
   width: 100%;
   height: 68px;
   background-color:#f4505b;
-  min-width: 1200px;
+  min-width: 1300px;
 }
 .nav {
   width: 100%;

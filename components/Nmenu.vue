@@ -35,7 +35,7 @@ export default {
    .nmain{
     width: 1000px;
     height: 900px;
-    background-color: aqua;
+    // background-color: aqua;
     position: relative;
   }
   .npaihang img{

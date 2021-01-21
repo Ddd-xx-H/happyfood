@@ -201,49 +201,128 @@
                 ><img
                   style="width: 200px; height: 200px"
                   src="../images/shanyao.jpg"
-                /> </el-link
+                />
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/pingguo.jpg"
+                />
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/daiyu.jpg"
+                />
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/niurou.jpg"
+                />
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/paigu.jpg"
+                />
+                 </el-link
             ></el-tab-pane>
             <el-tab-pane label="甜点" name="third"
               ><el-link href="/" :underline="false"
                 ><img
                   style="width: 200px; height: 200px"
                   src="../images/daiyu.jpg"
-                /> </el-link
+                /> 
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/yutou.jpg"
+                /> 
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/zishu.jpg"
+                /> 
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/pingguo.jpg"
+                /> 
+                </el-link
             ></el-tab-pane>
             <el-tab-pane label="奶制品" name="fourth"
               ><el-link href="/" :underline="false"
                 ><img
                   style="width: 200px; height: 200px"
                   src="../images/baicai.jpg"
-                /> </el-link
+                /> 
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/baicai.jpg"
+                /> 
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/baicai.jpg"
+                /> 
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/baicai.jpg"
+                />     
+                </el-link
             ></el-tab-pane>
             <el-tab-pane label="肉禽蛋品" name="five"
               ><el-link href="/" :underline="false"
                 ><img
                   style="width: 200px; height: 200px"
                   src="../images/zhuliji.jpg"
-                /> </el-link
+                /> 
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/zhuliji.jpg"
+                />
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/zhuliji.jpg"
+                />
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/zhuliji.jpg"
+                />
+                </el-link
             ></el-tab-pane>
             <el-tab-pane label="水产品" name="six"
               ><el-link href="/" :underline="false"
                 ><img
                   style="width: 200px; height: 200px"
                   src="../images/banli.jpg"
-                /> </el-link
+                /> 
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/banli.jpg"
+                />
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/banli.jpg"
+                />
+                </el-link
             ></el-tab-pane>
             <el-tab-pane label="五谷杂粮" name="seven"
               ><el-link href="/" :underline="false"
                 ><img
                   style="width: 200px; height: 200px"
                   src="../images/paigu.jpg"
-                /> </el-link
+                /> 
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/banli.jpg"
+                />
+                </el-link
             ></el-tab-pane>
             <el-tab-pane label="热门" name="eigth"
               ><el-link href="/" :underline="false"
                 ><img
                   style="width: 200px; height: 200px"
                   src="../images/niurou.jpg"
-                /> </el-link
+                /> 
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/banli.jpg"
+                />
+                <img
+                  style="width: 200px; height: 200px"
+                  src="../images/banli.jpg"
+                />
+                </el-link
             ></el-tab-pane>
           </el-tabs>
         </div>

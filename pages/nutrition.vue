@@ -301,6 +301,8 @@
         </div>
       </div>
     </div>
+    <!-- footer -->
+    <div class="footer"><Footer /></div>
   </div>
 </template>
 <script>
@@ -357,7 +359,7 @@ export default {
 .nbaike {
   width: 1400px;
   height: 1000px;
-  background-color: darkorange;
+  // background-color: darkorange;
   margin: 0 auto;
   display: flex;
   position: relative;
@@ -367,7 +369,7 @@ export default {
 .nymain {
   width: 300px;
   height: 400px;
-  background-color: #e7e7e7;
+  background-color: #effd71;
   // background-color: #f4505b;
   margin-left: 20px;
 }
@@ -413,10 +415,10 @@ export default {
 .nflex .grid-content a {
   text-decoration: none;
   line-height: 50px;
-  color: rgb(43, 41, 41);
+  color: #ffffff;
 }
 .nflex .grid-content a:hover {
-  color: #ffffff;
+  color: #2d3d81;
 }
 // 热门美食营养
 .ntbg {
@@ -434,9 +436,9 @@ export default {
   top: 10px;
   color: #f4505b;
 }
-.ntflex .bg-purple {
-  background: #d3dce6;
-}
+// .ntflex .bg-purple {
+//   background: #d3dce6;
+// }
 .ntflex .grid-content {
   width: 250px;
   height: 30px;
@@ -450,5 +452,8 @@ export default {
 }
 .ntflex a {
   font-size: 14px;
+}
+.footer{
+  min-width: 1300px;
 }
 </style>
