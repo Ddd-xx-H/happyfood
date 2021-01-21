@@ -10,19 +10,23 @@
     <el-card>
       <!-- 搜索栏 -->
       <el-row :gutter="20">
-          <el-col :span="8">
-               <el-input
-        placeholder="请输入内容"
-      >
-        <el-button slot="append" icon="el-icon-search"></el-button>
-      </el-input>
-          </el-col>
-          <el-col :span="4">
-              <el-button type="primary">添加用户</el-button>
-          </el-col>
+        <el-col :span="8">
+          <el-input placeholder="请输入内容" v-model="searchInput" clearable @clear="doFilter">
+            <el-button
+              slot="append"
+              icon="el-icon-search"
+              @click="doFilter"
+            ></el-button>
+          </el-input>
+        </el-col>
+        <el-col :span="4">
+          <el-button type="primary">添加用户</el-button>
+        </el-col>
       </el-row>
-     <!-- 用户表格 -->
-     <Utable :umanageList="fetchumanageList" />
+      <!-- 用户表格 -->
+      <div>
+        <Utable :umanageList="umanageList" />
+      </div>
     </el-card>
   </div>
 </template>
@@ -31,22 +35,29 @@ export default {
   layout: "global",
   data() {
     return {
+      searchInput: "",
       fetchumanageList: [],
-    }
+      umanageList: [],
+    };
   },
   async fetch() {
-     let result = await fetch("/api/umanages").then((res) => res.json());
-     this.fetchumanageList = result.list
+    let result = await fetch("/api/umanages").then((res) => res.json());
+    this.fetchumanageList = result.list;
+    this.umanageList = this.fetchumanageList;
     console.log(this.fetchumanageList);
-   },
-  created() {
-
   },
+  created() {},
   methods: {
-
-
-  }
-}
+    doFilter() {
+      let seft = this;
+      this.umanageList = this.fetchumanageList.filter(function (data) {
+        return Object.keys(data).some(function (key) {
+          return String(data[key]).indexOf(seft.searchInput) > -1;
+        });
+      });
+    },
+  },
+};
 </script>
 <style lang="less" scoped>
 .el-breadcrumb {
