@@ -89,39 +89,63 @@ router.get("/changeState", async (ctx, next) => {
 
 //添加用户
 router.post("/", async (ctx, next) => {
-    let { uname, uaddress, uphone, udata } = ctx.query;
+    console.log("data: %O", ctx.request.body);
+    let { uname, uaddress, uphone, udata } = ctx.request.body;
+    ctx.type = "text/json";
     const { Umanage } = ctx.orm("user");
-    // 通过查询的数据是一个数组
-    let umanage = await Umanage.findAll({
-   
-    })
-    // 查询到的数据不止一条
+    let umanage = await Umanage.findAll({ where: {uname} });
     if (umanage.length > 0) {
+        ctx.status = 200;
         ctx.body = JSON.stringify({
             result: false,
-            message: "用户已存在！"
+            message: "添加用户失败！",
         });
         return;
     }
 
-    // 从数组提取第一对象
-    umanage = umanage[0];
-
-    umanage.uname = uname;
-    umanage.uaddress = uaddress;
-    umanage.uphone = uphone;
-    umanage.udata = udata;
-    umanage.save()
-    console.log(umanage);
-
-    ctx.type = "text/json";
-    ctx.status = 200;
+    // 
+    umanage = await Umanage.create({ uname, uaddress, uphone, udata });
     ctx.body = JSON.stringify({
         result: true,
-        code: 200,
         message: "添加用户成功！",
-        umanage
+        umanage: umanage,
     });
 });
 
+// 删除
+router.post("/removeUmanage", async ctx => {
+    let { id } = ctx.request.body;
+    console.log("id: %O", id);
+
+    const { Umanage } = ctx.orm("user");
+    let deleteRoles = await Umanage.findAll({
+        where: {
+            id
+        }
+    });
+
+    if (deleteRoles.length === 0) {
+        ctx.status = 500;
+        ctx.type = "text/json";
+        ctx.body = JSON.stringify({
+            result: false,
+            message: "不存在指定的管理员数据"
+        })
+        return;
+    }
+
+    console.log("deleteRoles: %O", deleteRoles);
+    for (let index = 0; index < deleteRoles.length; index++) {
+        const element = deleteRoles[index];
+        // 删除管理员数据
+        await element.destroy();
+    }
+    ctx.status = 200;
+    ctx.type = "text/json";
+    ctx.body = JSON.stringify({
+        result: true,
+        message: "删除成功",
+        deleteRoles: deleteRoles,
+    })
+});
 export default router;

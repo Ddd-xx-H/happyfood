@@ -17,10 +17,10 @@
     </el-table-column>
     <el-table-column label="操作">
       <template slot-scope="scope">
-        <!-- 修改按钮 -->
-        <el-button type="primary" icon="el-icon-edit" size="small" @click="showEditDialog(scope.row.id)"></el-button>
+        <!-- 修改按钮
+        <el-button type="primary" icon="el-icon-edit" size="small" @click="showEditDialog(scope.row.uname)"></el-button> -->
         <!-- 删除按钮 -->
-        <el-button type="danger" icon="el-icon-delete" size="small"></el-button>
+        <el-button type="danger" icon="el-icon-delete" size="small" @click="handleDelete(scope.$index, scope.row)"></el-button>
         <!-- 分配角色按钮 -->
         <el-tooltip
           effect="dark"
@@ -38,7 +38,7 @@
     </el-table-column>
   </el-table>
      
-     <!-- 修改用户的对话框 -->
+     <!-- 修改用户的对话框
      <el-dialog
   title="修改用户"
   :visible.sync="editDialogVisible"
@@ -53,7 +53,7 @@
     <el-button @click="editDialogVisible = false">取 消</el-button>
     <el-button type="primary" @click="editDialogVisible = false">确 定</el-button>
   </span>
-</el-dialog>
+</el-dialog> -->
   </div>
 </template>
 <script>
@@ -68,8 +68,7 @@ export default {
   },
   data() {
     return {
-      // 控制修改用户对话框的显示与隐藏
-     editDialogVisible: false
+     
     };
   },
   created() {},
@@ -86,11 +85,56 @@ export default {
       }
       this.$message.success("更新用户状态成功！");
 },
-    //  展示编辑用户的对话框
-   async showEditDialog(id) {
-     console.log(id)
-    this.editDialogVisible = true
-    }
+    //  async removeUserById(id){
+    //   // 删除弹框
+    //    const confirmResult = await this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
+    //       confirmButtonText: '确定',
+    //       cancelButtonText: '取消',
+    //       type: 'warning'
+    //     }).catch(err => err)
+
+    //     //确认删除，则返回值为字符串 confirm
+    //     //取消了删除，则返回值为字符串 cancel
+    //     // console.log(confirmResult)
+    //     if (confirmResult !== 'confirm') {
+    //       return this.$message.info('已取消删除')
+    //     }
+        
+    //      const { data: res } = await this.$axios.post('/api/umanages' + id)
+        
+    //        if (!res.result) {
+    //     return this.$message.error("删除用户失败！");
+    //   }
+    //   this.$message.success("删除用户成功！");
+    //   this.getumanageList()
+    //  }
+    // 删除
+    handleDelete(index, row) {
+      this.$confirm("确定要删除 数据 吗？", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning",
+      })
+        .then(() => {
+          this.$store.commit("umanage/setRemoveUmanage", row);
+          this.$store.dispatch("umanage/removeUmanage", this);
+          // this.$message({
+          //   type: "success",
+          //   message: "删除成功!",
+          // });
+        })
+        .catch((error) => {
+          console.error(error);
+          this.$message({
+            type: "info",
+            message: "已取消删除",
+          });
+        });
+    },
+    finishRemove(result) {
+      console.log("result: %O", result);
+      this.$router.go(0);
+    },
     
   },
 };

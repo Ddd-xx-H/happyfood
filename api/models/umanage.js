@@ -5,7 +5,17 @@ class Umanage extends Model { }
 export default function (sequelize, type) {
     let model = Umanage.init({
         //对应uiser表的id字段
-        
+        id:{
+            // 数据库里的数据类型为INT
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            // 不能为空
+            allowNull: false,
+            // 自增加
+            autoIncrement: true,
+            // 唯一性
+            unique: true,
+    },
         udata:{
             type: DataTypes.STRING(50),
             allowNull: false,
