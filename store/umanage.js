@@ -7,29 +7,32 @@ const state = () => ({
     removeUmanageObj: null,
 
     // teamFields: defaultTeamFields,
-    applications: [],
-    application: [],
+    UmanageList: [],
+    Umanage: [],
 })
 
 const mutations = {
-    // setApplicationList(state, applications) {
-    //     state.applications = applications;
-    // },
-    // setApplication(state, application) {
-    //     state.application = application;
-    // },
-    // setApp_name(state, app_name) {
-    //     state.application.app_name = app_name;
-    // },
-    // setaid(state, aid) {
-    //     state.application.aid = aid;
-    // },
-    // setApp_supplier(state, app_supplier) {
-    //     state.application.app_supplier = app_supplier;
-    // },
-    // setDesc(state, desc) {
-    //     state.application.desc = desc;
-    // },
+    setUmanageList(state, UmanageList) {
+        state.UmanageList = UmanageList;
+    },
+    setUmanage(state, Umanage) {
+        state.Umanage = Umanage;
+    },
+    setuname(state, uname) {
+        state.Umanage.uname = uname;
+    },
+    setudata(state, udata) {
+        state.Umanage.udata = udata;
+    },
+    setuaddress(state, uaddress) {
+        state.Umanage.uaddress = uaddress;
+    },
+    setuphone(state, uphone) {
+        state.Umanage.uphone = uphone;
+    },
+    setustate(state, ustate) {
+        state.Umanage.ustate = ustate;
+    },
 
 
     // 删除
@@ -46,32 +49,32 @@ const mutations = {
 // 增加
 const actions = {
 
-        async getApplicationList(context, page) {
-            let result = await fetch("/api/application", {
-                method: "GET",
-            }).then((res) => res.json());
-            if (result.result) {
-                context.commit("setApplicationList", result.applicationList);
-            } else { 
-                context.commit("setApplicationList", []);
-            }
-            // if (page) page.finishGetTeacherList(result);
-        },
-        async addApplicationList(context,{application,page}) {
-            // debugger
-              let body =postbody(application);
-            let result = await fetch(`/api/application`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
-                },
-                body,
-            }).then((res) => res.json());
-            context.commit("setApplication", result.application);
-            // page.finishApplication(result);
-        },
+    async getUmanageList(context, page) {
+        let result = await fetch("/api/umanages", {
+            method: "GET",
+        }).then((res) => res.json());
+        if (result.result) {
+            context.commit("setUmanageList", result.umanageList);
+        } else {
+            context.commit("setUmanageList", []);
+        }
+        // if (page) page.finishGetTeacherList(result);
+    },
+    async addUmanageList(context, { umanage, page }) {
+        // debugger
+        let body = postbody(umanage);
+        let result = await fetch(`/api/umanages`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+            },
+            body,
+        }).then((res) => res.json());
+        context.commit("setUmanage", result.umanage);
+        
+    },
 
-    
+
     // 查看
     async getApplicationInfo(context, { page, id }) {
         //去服务器获取这个app 详情 
@@ -95,7 +98,7 @@ const actions = {
     // 删除
     async removeUmanage(context, page) {
         console.log("跟服务器说删除 id为: %O 的管理员", context.state.removeUmanageObj.app_id);
-        let body = postbody({ id: context.state.removeUmanageObj.id})
+        let body = postbody({ id: context.state.removeUmanageObj.id })
         let result = await fetch("/api/umanages/removeUmanage", {
             method: "POST",
             headers: {

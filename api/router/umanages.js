@@ -90,27 +90,27 @@ router.get("/changeState", async (ctx, next) => {
 //添加用户
 router.post("/", async (ctx, next) => {
     console.log("data: %O", ctx.request.body);
-    let { uname, uaddress, uphone, udata } = ctx.request.body;
+    let { udata,uname,uaddress,uphone,ustate } = ctx.request.body;
     ctx.type = "text/json";
     const { Umanage } = ctx.orm("user");
-    let umanage = await Umanage.findAll({ where: {uname} });
+    let umanage = await Umanage.findAll({ where: { uname } });
     if (umanage.length > 0) {
-        ctx.status = 200;
+        ctx.status = 400;
         ctx.body = JSON.stringify({
             result: false,
-            message: "添加用户失败！",
+            message: "已存在该团队的名称",
         });
         return;
     }
 
-    // 
-    umanage = await Umanage.create({ uname, uaddress, uphone, udata });
+    umanage = await Umanage.create({ udata,uname,uaddress,uphone,ustate });
     ctx.body = JSON.stringify({
         result: true,
-        message: "添加用户成功！",
+        message: "创建成功",
         umanage: umanage,
     });
 });
+
 
 // 删除
 router.post("/removeUmanage", async ctx => {
