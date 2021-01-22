@@ -16,9 +16,9 @@
       </template>
     </el-table-column>
     <el-table-column label="操作">
-      <template>
+      <template slot-scope="scope">
         <!-- 修改按钮 -->
-        <el-button type="primary" icon="el-icon-edit" size="small"></el-button>
+        <el-button type="primary" icon="el-icon-edit" size="small" @click="showEditDialog(scope.row.id)"></el-button>
         <!-- 删除按钮 -->
         <el-button type="danger" icon="el-icon-delete" size="small"></el-button>
         <!-- 分配角色按钮 -->
@@ -37,7 +37,23 @@
       </template>
     </el-table-column>
   </el-table>
-
+     
+     <!-- 修改用户的对话框 -->
+     <el-dialog
+  title="修改用户"
+  :visible.sync="editDialogVisible"
+  width="50%"
+  >
+ <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px">
+  <el-form-item label="用户名">
+    <el-input v-model="editForm" disabled></el-input>
+  </el-form-item>
+ </el-form>
+  <span slot="footer" class="dialog-footer">
+    <el-button @click="editDialogVisible = false">取 消</el-button>
+    <el-button type="primary" @click="editDialogVisible = false">确 定</el-button>
+  </span>
+</el-dialog>
   </div>
 </template>
 <script>
@@ -52,7 +68,8 @@ export default {
   },
   data() {
     return {
-     
+      // 控制修改用户对话框的显示与隐藏
+     editDialogVisible: false
     };
   },
   created() {},
@@ -68,7 +85,13 @@ export default {
         return this.$message.error("更新用户状态失败！");
       }
       this.$message.success("更新用户状态成功！");
-    },
+},
+    //  展示编辑用户的对话框
+   async showEditDialog(id) {
+     console.log(id)
+    this.editDialogVisible = true
+    }
+    
   },
 };
 </script>
