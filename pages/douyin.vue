@@ -32,6 +32,9 @@
     <div class="douyin">
        <div class="dy">
          <div>
+         <Dynews />
+         </div>
+         <div class="dylunbo">
          <Dycard />
          </div>
        </div>
@@ -93,5 +96,8 @@ export default {
     margin: 0 auto;
     min-width: 1400px;
     
+  }
+  .dylunbo{
+    margin-top: 40px;
   }
 </style>
