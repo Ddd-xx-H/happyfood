@@ -37,6 +37,9 @@
          <div class="dylunbo">
          <Dycard />
          </div>
+         <div class="dytable">
+           <Dytable />
+         </div>
        </div>
 
     </div>
@@ -91,7 +94,7 @@ export default {
   }
   .dy{
     width: 1400px;
-    height: 700px;
+    height: 900px;
     background-color: aquamarine;
     margin: 0 auto;
     min-width: 1400px;
@@ -99,5 +102,8 @@ export default {
   }
   .dylunbo{
     margin-top: 40px;
+  }
+  .dytable{
+    margin-top: 30px;
   }
 </style>
