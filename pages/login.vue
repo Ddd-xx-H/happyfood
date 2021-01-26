@@ -42,7 +42,7 @@
           <el-button type="primary" @click="submitForm('ruleForm')"
             >G O</el-button
           >
-          <!-- <el-button type="info" @click="resetloginForm">重置</el-button> -->
+          <el-button type="info"><a href="/">返回</a></el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -155,5 +155,9 @@ export default {
 .el-link {
   margin-right: 70px;
   color: #409eff;
+}
+a{
+  text-decoration: none;
+  color: #fff;
 }
 </style>

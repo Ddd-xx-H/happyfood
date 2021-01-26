@@ -1,5 +1,5 @@
 <template>
-  <el-carousel arrow="never" type="card" :autoplay="false" height="330px" width="325px">
+  <el-carousel arrow="never" type="card" :autoplay="false" height="330px" width="325px" indicator-position="none">
     <el-carousel-item v-for="item in 6" :key="item">
      
     </el-carousel-item>

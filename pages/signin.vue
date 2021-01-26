@@ -4,6 +4,7 @@
       <el-card class="box-card">
         <div slot="header" class="clearfix">
           <span>注册</span>
+          
         </div>
 
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" size="medium ">
@@ -38,6 +39,7 @@
               @click="submitForm('ruleForm')"
               >注册</el-button
             >
+            
           </el-form-item>
         </el-form>
       </el-card>
@@ -49,7 +51,7 @@ export default {
   data() {
     return {
       passwordVisible: "password", // 查看、隐藏密码
-      icon: "el-icon-view",
+      icon: "el-icon-dish-1",
       dialogFormVisible: false, // 对话框内容
 
       ruleForm: {
@@ -94,10 +96,10 @@ export default {
       if (this.passwordVisible === "text") {
         this.passwordVisible = "password";
         //更换图标
-        this.icon = "el-icon-view";
+        this.icon = "el-icon-dish-1";
       } else {
         this.passwordVisible = "text";
-        this.icon = "el-icon-minus";
+        this.icon = "el-icon-food";
       }
     },
   },

@@ -104,7 +104,7 @@ export default {
     width: 1300px;
     height: 1360px;
     margin: 0 auto;
-    background-color: cornflowerblue;
+    // background-color: cornflowerblue;
     margin-top: 50px;
   }
    .fyuan{

@@ -13,8 +13,8 @@
             <span>{{ item.Know_desc }}</span>
             <div class="bottom clearfix">
               <time class="time">{{ currentDate }}</time>
-             <el-link href="/fmenu" :underline="false"
-            >查看详情</el-link
+             <el-link href="/knowledge" :underline="false"
+            >了解更多</el-link
           >
             </div>
           </div>

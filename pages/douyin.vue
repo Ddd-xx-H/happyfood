@@ -43,7 +43,8 @@
        </div>
 
     </div>
-      
+      <!-- footer -->
+      <div class="footer"><Footer /></div>
     </div>
 </template>
 <script>
@@ -94,8 +95,8 @@ export default {
   }
   .dy{
     width: 1400px;
-    height: 900px;
-    background-color: aquamarine;
+    height: 1320px;
+    // background-color: aquamarine;
     margin: 0 auto;
     min-width: 1400px;
     
@@ -104,6 +105,10 @@ export default {
     margin-top: 40px;
   }
   .dytable{
-    margin-top: 30px;
+    margin-top: 45px;
+  }
+  .footer{
+    min-width: 1400px;
+    margin-top: 20px;
   }
 </style>

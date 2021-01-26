@@ -32,7 +32,7 @@
     <div class="fnav">
       <div class="fnavb mt20 clear jtl">
         <a
-          href="https://home.meishichina.com/show-top-type-recipe.html"
+          href="#"
           target="_blank"
           title="一周最热"
         >
@@ -45,7 +45,7 @@
         </a>
 
         <a
-          href="https://home.meishichina.com/show-top-type-recipe-order-pop.html"
+          href="#"
           target="_blank"
           title="人气菜肴"
         >
@@ -58,7 +58,7 @@
         </a>
 
         <a
-          href="https://home.meishichina.com/recipe/chunji/"
+          href="#"
           target="_blank"
           title="春季食谱"
         >
@@ -71,7 +71,7 @@
         </a>
 
         <a
-          href="https://home.meishichina.com/recipe/gaoyanzhi/"
+          href="#"
           target="_blank"
           title="高颜值"
         >
@@ -84,7 +84,7 @@
         </a>
 
         <a
-          href="https://home.meishichina.com/recipe/kuaishoucai/"
+          href="#"
           target="_blank"
           title="快手菜"
         >
@@ -97,7 +97,7 @@
         </a>
 
         <a
-          href="https://home.meishichina.com/recipe/zaocan/"
+          href="#"
           target="_blank"
           title="早餐"
         >
@@ -110,7 +110,7 @@
         </a>
 
         <a
-          href="https://home.meishichina.com/recipe-menu.html"
+          href="#"
           target="_blank"
           title="家常菜谱"
         >
@@ -122,7 +122,7 @@
           家常菜谱
         </a>
         <a
-          href="https://hongbei.meishichina.com/"
+          href="#"
           target="_blank"
           title="烘焙大全"
         >
@@ -134,7 +134,7 @@
           烘焙大全
         </a>
         <a
-          href="https://mamapai.meishichina.com/"
+          href="#"
           target="_blank"
           title="亲子专区"
         >
@@ -146,7 +146,7 @@
           亲子专区
         </a>
         <a
-          href="https://home.meishichina.com/recipe-list.html"
+          href="#"
           target="_blank"
           title="所有菜谱"
         >

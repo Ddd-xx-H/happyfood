@@ -82,8 +82,8 @@
     </el-aside>
     <el-container>
         <!-- 右边内容主体 -->
-      <el-main>main</el-main>
-      <el-footer>Footer</el-footer>
+      <el-main>欢迎来到美食体验 ~</el-main>
+      <!-- <el-footer>Footer</el-footer> -->
     </el-container>
   </el-container>
 </el-container>
