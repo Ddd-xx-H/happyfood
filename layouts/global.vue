@@ -48,7 +48,7 @@
                <template slot="title">
             <!-- 图标 -->
           <i class="el-icon-location"></i>
-          <span>导航一</span>
+          <span>统计列表</span>
         </template>
           </el-menu-item>
         </el-submenu>
@@ -61,7 +61,7 @@
           <el-menu-item index="/menu">
                <template slot="title">
           <i class="el-icon-location"></i>
-          <span>导航一</span>
+          <span>菜谱列表</span>
         </template>
           </el-menu-item>
         </el-submenu>
@@ -74,7 +74,7 @@
           <el-menu-item index="/collect">
                <template slot="title">
           <i class="el-icon-location"></i>
-          <span>导航一</span>
+          <span>收藏列表</span>
         </template>
           </el-menu-item>
         </el-submenu>
